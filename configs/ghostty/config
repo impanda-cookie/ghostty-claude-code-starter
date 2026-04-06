@@ -1,0 +1,18 @@
+# ghostty-claude-code-starter
+
+font-family = JetBrainsMono Nerd Font
+font-size = 14
+
+window-padding-x = 12
+window-padding-y = 10
+window-theme = auto
+window-save-state = always
+macos-titlebar-style = tabs
+background-opacity = 0.92
+
+mouse-shift-capture = true
+copy-on-select = clipboard
+shell-integration = zsh
+
+# Uncomment if you want Option to behave as Alt in terminal apps.
+# macos-option-as-alt = true
