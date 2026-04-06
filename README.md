@@ -10,6 +10,10 @@ If your daily terminal routine looks like this, this repo is for you:
 
 This starter is intentionally small. It does not try to become a full personal dotfiles framework. It gives you a clean Ghostty base, a better Zsh prompt, autosuggestions, syntax highlighting, better file listing, and a usable `yazi` setup with safe backups.
 
+![Ghostty workspace screenshot](docs/screenshots/ghostty-workspace.png)
+
+Split Ghostty panes for repo browsing, git status, and quick navigation.
+
 ## Why This Exists
 
 The default macOS terminal is usable, but it starts to feel clumsy once you are doing high-frequency terminal work:
