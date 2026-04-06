@@ -1,15 +1,25 @@
 # ghostty-claude-code-starter
 
-A lightweight Mac terminal starter for people who run Claude Code heavily and want Ghostty, Oh My Zsh, autosuggestions, syntax highlighting, `eza`, and `yazi` working fast.
+Ghostty + Oh My Zsh + `eza` + `yazi`, packaged as a lightweight Mac terminal starter for Claude Code workflows.
 
-## What You Get
+If your daily terminal routine looks like this, this repo is for you:
 
-- Ghostty starter config tuned for daily development
-- Oh My Zsh with `agnoster`
-- `zsh-autosuggestions` and `zsh-syntax-highlighting`
-- `eza` aliases for cleaner file listing
-- `yazi` wrapper that keeps your shell in the last visited directory
-- Safe config application with backups
+- one Claude Code session on the left
+- tests or logs on the right
+- fast project switching without fighting plain `ls` and awkward shell defaults
+
+This starter is intentionally small. It does not try to become a full personal dotfiles framework. It gives you a clean Ghostty base, a better Zsh prompt, autosuggestions, syntax highlighting, better file listing, and a usable `yazi` setup with safe backups.
+
+## Why This Exists
+
+The default macOS terminal is usable, but it starts to feel clumsy once you are doing high-frequency terminal work:
+
+- opening multiple Claude Code sessions
+- watching logs while running commands
+- jumping across repos all day
+- wanting the terminal to feel fast and readable, not just functional
+
+This repo turns that into a quick install path instead of a two-hour manual setup session.
 
 ## Quick Start
 
@@ -18,32 +28,55 @@ git clone https://github.com/impanda-cookie/ghostty-claude-code-starter.git
 cd ghostty-claude-code-starter
 ./install.sh
 ./apply.sh
-```
-
-After that:
-
-```bash
 source ~/.zshrc
 ```
 
-If Ghostty is already open, reload or restart it.
+If Ghostty is already open, reload it or restart it once.
 
-## First 30 Seconds
+## What You Get In 30 Seconds
 
-After setup, the fastest things to try are:
+- Ghostty starter config with clean spacing and sensible defaults
+- Oh My Zsh with `agnoster`
+- `zsh-autosuggestions` and `zsh-syntax-highlighting`
+- `eza` aliases for better directory listing
+- `y` as a `yazi` launcher that keeps your shell in the last visited directory
+- safe backup of files before config changes
+
+## First Things To Try
+
+After setup:
 
 ```bash
 ll
 y
 ```
 
-Quick key cheatsheet:
+Useful Ghostty shortcuts:
 
-- `Cmd + ,` in Ghostty: open settings
+- `Cmd + ,`: open Ghostty settings
 - `Cmd + D`: split vertically
 - `Cmd + Shift + D`: split horizontally
-- `y`: launch Yazi
-- inside Yazi: `h` goes to parent directory, `l` enters, `q` quits
+
+Useful Yazi keys:
+
+- `h`: go to the parent directory
+- `l`: enter a directory
+- `q`: quit Yazi and return to the shell
+
+## Best Fit
+
+This repo is a good fit if you want:
+
+- a starter setup, not a giant dotfiles system
+- a terminal stack that feels better for Claude Code multi-window work
+- a safe apply step with backups
+- sane defaults you can still edit later
+
+This repo is not trying to:
+
+- manage every shell preference you have
+- replace a deeply customized dotfiles setup
+- choose tmux, cmux, or Starship for you
 
 ## Install Flow
 
@@ -51,48 +84,32 @@ Quick key cheatsheet:
 
 - checks macOS
 - installs Homebrew if needed
-- installs packages in `Brewfile`
+- installs packages from `Brewfile`
 - installs Oh My Zsh if missing
 - installs or updates shell plugins
 
 `./apply.sh`
 
 - backs up your current files
-- copies the Ghostty starter config
-- updates `ZSH_THEME` to `agnoster`
-- updates Oh My Zsh plugins to include:
-  - `git`
-  - `z`
-  - `extract`
-  - `zsh-autosuggestions`
-  - `zsh-syntax-highlighting`
-- appends a managed starter block to `~/.zshrc`
+- writes the Ghostty starter config
+- switches `ZSH_THEME` to `agnoster`
+- merges required Oh My Zsh plugins into your existing plugin list
+- appends one managed starter block to `~/.zshrc`
 
-## Managed Files
-
-- `~/.config/ghostty/config`
-- `~/.zshrc`
-
-Backups are written under:
-
-```text
-~/.ghostty-claude-code-starter-backups/
-```
-
-## Starter Features
+## Included Defaults
 
 ### Ghostty
 
-- clean padding and font defaults
-- translucent background
-- native URL and path click capture with `Shift`
-- ready for split-heavy workflows
+- JetBrains Mono Nerd Font
+- clean window padding
+- slightly translucent background
+- `mouse-shift-capture = true` for path and URL click handling
 
 ### Zsh
 
 - `agnoster` prompt
-- hide `user@host` for local sessions
-- shorten path display in deep directories
+- hidden local `user@host`
+- shorter deep path display
 - `ls`, `ll`, `lt` mapped to `eza`
 - `y` wrapper for `yazi`
 
@@ -107,7 +124,7 @@ y
 Important behavior:
 
 - `q` quits Yazi completely and returns to the shell
-- `h` or `Left` goes back to the parent directory
+- `h` or `Left` goes to the parent directory
 - `l` or `Right` enters a directory
 - when you quit, your shell stays in the last directory you were viewing
 
@@ -123,17 +140,28 @@ Common keys:
 - `p`: paste files
 - `q`: quit Yazi
 
-## Optional: Starship
+## Managed Files
 
-This repo defaults to Oh My Zsh plus `agnoster` because it closely matches the article flow.
+- `~/.config/ghostty/config`
+- `~/.zshrc`
 
-If you prefer Starship, see [docs/starship.md](docs/starship.md).
+Backups are written under:
+
+```text
+~/.ghostty-claude-code-starter-backups/
+```
 
 ## Fonts
 
-For Powerline and Nerd Font icons, install a Nerd Font and select it in Ghostty.
+This starter assumes a Nerd Font for prompt glyphs and file icons.
 
 Recommended setup is documented in [docs/fonts.md](docs/fonts.md).
+
+## Optional: Starship
+
+This repo defaults to Oh My Zsh plus `agnoster` because it matches the starter flow and keeps setup simple.
+
+If you prefer Starship, see [docs/starship.md](docs/starship.md).
 
 ## Partial Uninstall
 
